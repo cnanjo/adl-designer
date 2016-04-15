@@ -169,7 +169,7 @@
     <p>The files in the CodeMirror distribution contain shims for
     loading them (and their dependencies) in AMD or CommonJS
     environments. If the variables <code>exports</code>
-    and <code>module</code> exist and have type object, CommonJS-style
+    and <code>module</code> exist and have bmmType object, CommonJS-style
     require will be used. If not, but there is a
     function <code>define</code> with an <code>amd</code> property
     present, AMD-style (RequireJS) will be used.</p>
@@ -224,7 +224,7 @@
       <dd>The mode to use. When not given, this will default to the
       first mode that was loaded. It may be a string, which either
       simply names the mode or is
-      a <a href="http://en.wikipedia.org/wiki/MIME">MIME</a> type
+      a <a href="http://en.wikipedia.org/wiki/MIME">MIME</a> bmmType
       associated with the mode. Alternatively, it may be an object
       containing configuration options for the mode, with
       a <code>name</code> property that names the mode (for
@@ -637,7 +637,7 @@
       <strong>"keyup"</strong>, <strong>"dragstart"</strong>, <strong>"dragenter"</strong>,
       <strong>"dragover"</strong>, <strong>"drop"</strong>
       (instance: CodeMirror, event: Event)</code></dt>
-      <dd>Fired when CodeMirror is handling a DOM event of this type.
+      <dd>Fired when CodeMirror is handling a DOM event of this bmmType.
       You can <code>preventDefault</code> the event, or give it a
       truthy <code>codemirrorIgnore</code> property, to signal that
       CodeMirror should do no further handling.</dd>
@@ -650,7 +650,7 @@
     <dl>
       <dt id="event_doc_change"><code><strong>"change"</strong> (doc: CodeMirror.Doc, changeObj: object)</code></dt>
       <dd>Fired whenever a change occurs to the
-      document. <code>changeObj</code> has a similar type as the
+      document. <code>changeObj</code> has a similar bmmType as the
       object passed to the
       editor's <a href="#event_change"><code>"change"</code></a>
       event.</dd>
@@ -1423,14 +1423,14 @@ editor.setOption("extraKeys", {
       or a string that corresponds to the <code>name</code> propery of
       that value, to remove an overlay again.</dd>
 
-      <dt id="on"><code><strong>cm.on</strong>(type: string, func: (...args))</code></dt>
-      <dd>Register an event handler for the given event type (a
+      <dt id="on"><code><strong>cm.on</strong>(bmmType: string, func: (...args))</code></dt>
+      <dd>Register an event handler for the given event bmmType (a
       string) on the editor instance. There is also
-      a <code>CodeMirror.on(object, type, func)</code> version
+      a <code>CodeMirror.on(object, bmmType, func)</code> version
       that allows registering of events on any object.</dd>
-      <dt id="off"><code><strong>cm.off</strong>(type: string, func: (...args))</code></dt>
+      <dt id="off"><code><strong>cm.off</strong>(bmmType: string, func: (...args))</code></dt>
       <dd>Remove an event handler on the editor instance. An
-      equivalent <code>CodeMirror.off(object, type,
+      equivalent <code>CodeMirror.off(object, bmmType,
       func)</code> also exists.</dd>
     </dl>
 
@@ -1885,7 +1885,7 @@ editor.setOption("extraKeys", {
         <dt><code><strong>start</strong></code></dt><dd>The character (on the given line) at which the token starts.</dd>
         <dt><code><strong>end</strong></code></dt><dd>The character at which the token ends.</dd>
         <dt><code><strong>string</strong></code></dt><dd>The token's string.</dd>
-        <dt><code><strong>type</strong></code></dt><dd>The token type the mode assigned
+        <dt><code><strong>bmmType</strong></code></dt><dd>The token bmmType the mode assigned
         to the token, such as <code>"keyword"</code>
         or <code>"comment"</code> (may also be null).</dd>
         <dt><code><strong>state</strong></code></dt><dd>The mode's state at the end of this token.</dd>
@@ -1895,7 +1895,7 @@ editor.setOption("extraKeys", {
       edits were recently made and highlighting has not yet completed.
       </dd>
 
-      <dt id="getLineTokens"><code><strong>cm.getLineTokens</strong>(line: integer, ?precise: boolean) → array&lt;{start, end, string, type, state}&gt;</code></dt>
+      <dt id="getLineTokens"><code><strong>cm.getLineTokens</strong>(line: integer, ?precise: boolean) → array&lt;{start, end, string, bmmType, state}&gt;</code></dt>
       <dd>This is similar
       to <a href="#getTokenAt"><code>getTokenAt</code></a>, but
       collects all tokens for a given line into an array. It is much
@@ -1905,19 +1905,19 @@ editor.setOption("extraKeys", {
       <dt id="getTokenTypeAt"><code><strong>cm.getTokenTypeAt</strong>(pos: {line, ch}) → string</code></dt>
       <dd>This is a (much) cheaper version
       of <a href="#getTokenAt"><code>getTokenAt</code></a> useful for
-      when you just need the type of the token at a given position,
+      when you just need the bmmType of the token at a given position,
       and no other information. Will return <code>null</code> for
       unstyled tokens, and a string, potentially containing multiple
       space-separated style names, otherwise.</dd>
 
-      <dt id="getHelpers"><code><strong>cm.getHelpers</strong>(pos: {line, ch}, type: string) → array&lt;helper&gt;</code></dt>
+      <dt id="getHelpers"><code><strong>cm.getHelpers</strong>(pos: {line, ch}, bmmType: string) → array&lt;helper&gt;</code></dt>
       <dd>Fetch the set of applicable helper values for the given
       position. Helpers provide a way to look up functionality
-      appropriate for a mode. The <code>type</code> argument provides
+      appropriate for a mode. The <code>bmmType</code> argument provides
       the helper namespace (see
       <a href="#registerHelper"><code>registerHelper</code></a>), in
       which the values will be looked up. When the mode itself has a
-      property that corresponds to the <code>type</code>, that
+      property that corresponds to the <code>bmmType</code>, that
       directly determines the keys that are used to look up the helper
       values (it may be either a single string, or an array of
       strings). Failing that, the mode's <code>helperType</code>
@@ -1936,7 +1936,7 @@ editor.setOption("extraKeys", {
       declare they are applicable will also be added to the array that
       is returned.</dd>
 
-      <dt id="getHelper"><code><strong>cm.getHelper</strong>(pos: {line, ch}, type: string) → helper</code></dt>
+      <dt id="getHelper"><code><strong>cm.getHelper</strong>(pos: {line, ch}, bmmType: string) → helper</code></dt>
       <dd>Returns the first applicable helper value.
       See <a href="#getHelpers"><code>getHelpers</code></a>.</dd>
 
@@ -2086,18 +2086,18 @@ editor.setOption("extraKeys", {
       (with the instance as argument) whenever a new CodeMirror instance
       is initialized.</dd>
 
-      <dt id="registerHelper"><code><strong>CodeMirror.registerHelper</strong>(type: string, name: string, value: helper)</code></dt>
+      <dt id="registerHelper"><code><strong>CodeMirror.registerHelper</strong>(bmmType: string, name: string, value: helper)</code></dt>
       <dd>Registers a helper value with the given <code>name</code> in
-      the given namespace (<code>type</code>). This is used to define
+      the given namespace (<code>bmmType</code>). This is used to define
       functionality that may be looked up by mode. Will create (if it
       doesn't already exist) a property on the <code>CodeMirror</code>
-      object for the given <code>type</code>, pointing to an object
+      object for the given <code>bmmType</code>, pointing to an object
       that maps names to values. I.e. after
       doing <code>CodeMirror.registerHelper("hint", "foo",
       myFoo)</code>, the value <code>CodeMirror.hint.foo</code> will
       point to <code>myFoo</code>.</dd>
 
-      <dt id="registerGlobalHelper"><code><strong>CodeMirror.registerGlobalHelper</strong>(type: string, name: string, predicate: fn(mode, CodeMirror), value: helper)</code></dt>
+      <dt id="registerGlobalHelper"><code><strong>CodeMirror.registerGlobalHelper</strong>(bmmType: string, name: string, predicate: fn(mode, CodeMirror), value: helper)</code></dt>
       <dd>Acts
       like <a href="#registerHelper"><code>registerHelper</code></a>,
       but also registers this helper as 'global', meaning that it will
@@ -2346,7 +2346,7 @@ editor.setOption("extraKeys", {
         foldable ranges. If this is not directly passed, it will
         default to <code>CodeMirror.fold.auto</code>, which
         uses <a href="#getHelpers"><code>getHelpers</code></a> with
-        a <code>"fold"</code> type to find folding functions
+        a <code>"fold"</code> bmmType to find folding functions
         appropriate for the local mode. There are files in
         the <a href="../addon/fold/"><code>addon/fold/</code></a>
         directory providing <code>CodeMirror.fold.brace</code>, which
@@ -2485,7 +2485,7 @@ editor.setOption("extraKeys", {
       <dd>If no hinting function is given, the addon will
       use <code>CodeMirror.hint.auto</code>, which
       calls <a href="#getHelpers"><code>getHelpers</code></a> with
-      the <code>"hint"</code> type to find applicable hinting
+      the <code>"hint"</code> bmmType to find applicable hinting
       functions, and tries them one by one. If that fails, it looks
       for a <code>"hintWords"</code> helper to fetch a list of
       completable words for the mode, and
@@ -2658,7 +2658,7 @@ editor.setOption("extraKeys", {
       example <code>CodeMirror.lint.javascript</code>), or
       to <code>true</code>, in which
       case <a href="#getHelper"><code>getHelper</code></a> with
-      type <code>"lint"</code> is used to determined a validator
+      bmmType <code>"lint"</code> is used to determined a validator
       function. Such a function should, when given a document string,
       an options object, and an editor instance, return an array of <code>{message,
       severity, from, to}</code> objects representing problems. When
@@ -2707,7 +2707,7 @@ editor.setOption("extraKeys", {
       Defines <code>CodeMirror.modeInfo</code>, an array of objects
       with <code>{name, mime, mode}</code> properties,
       where <code>name</code> is the human-readable
-      name, <code>mime</code> the MIME type, and <code>mode</code> the
+      name, <code>mime</code> the MIME bmmType, and <code>mode</code> the
       name of the mode file that defines this MIME. There are optional
       properties <code>mimes</code>, which holds an array of MIME
       types for modes with multiple MIMEs associated,
@@ -3122,7 +3122,7 @@ editor.setOption("extraKeys", {
 
     <p id="defineMIME">It is possible, and encouraged, to associate
     your mode, or a certain configuration of your mode, with
-    a <a href="http://en.wikipedia.org/wiki/MIME">MIME</a> type. For
+    a <a href="http://en.wikipedia.org/wiki/MIME">MIME</a> bmmType. For
     example, the JavaScript mode associates itself
     with <code>text/javascript</code>, and its JSON variant
     with <code>application/json</code>. To do this,

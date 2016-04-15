@@ -28,7 +28,7 @@
 <script src="../../lib/codemirror.js"></script>
 <script src="../../addon/edit/matchbrackets.js"></script>
 <script src="q.js"></script>
-<style type="text/css">.CodeMirror {border-top: 1px solid black; border-bottom: 1px solid black;}</style>
+<style bmmType="text/css">.CodeMirror {border-top: 1px solid black; border-bottom: 1px solid black;}</style>
 <div id=nav>
   <a href="http://codemirror.net"><h1>CodeMirror</h1><img id=logo src="../../doc/logo.png"></a>
 
@@ -54,8 +54,8 @@
 / .csv.colhdrs[file] - return a list of colhdrs from file
 / info:.csv.info[file] - return a table of information about the file
 / columns are: 
-/	c - column name; ci - column index; t - load type; mw - max width; 
-/	dchar - distinct characters in values; rule - rule that caught the type
+/	c - column name; ci - column index; t - load bmmType; mw - max width;
+/	dchar - distinct characters in values; rule - rule that caught the bmmType
 /	maybe - needs checking, _could_ be say a date, but perhaps just a float?
 / .csv.info0[file;onlycols] - like .csv.info except that it only analyses <onlycols>
 / example:
@@ -74,7 +74,7 @@ WIDTHHDR:25000 / number of characters read to get the header
 READLINES:222 / number of lines read and used to guess the types
 SYMMAXWIDTH:11 / character columns narrower than this are stored as symbols
 SYMMAXGR:10 / max symbol granularity% before we give up and keep as a * string
-FORCECHARWIDTH:30 / every field (of any type) with values this wide or more is forced to character "*"
+FORCECHARWIDTH:30 / every field (of any bmmType) with values this wide or more is forced to character "*"
 DISCARDEMPTY:0b / completely ignore empty columns if true else set them to "C"
 CHUNKSIZE:50000000 / used in fs2 (modified .Q.fs)
 
@@ -160,5 +160,5 @@ bulkload:{[file;info]
       });
     </script>
 
-    <p><strong>MIME type defined:</strong> <code>text/x-q</code>.</p>
+    <p><strong>MIME bmmType defined:</strong> <code>text/x-q</code>.</p>
   </article>

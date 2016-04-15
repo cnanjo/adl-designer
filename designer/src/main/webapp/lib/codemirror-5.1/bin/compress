@@ -102,7 +102,7 @@ if (local) {
     port: 80,
     method: "POST",
     path: "/uglifyjs",
-    headers: {"content-type": "application/x-www-form-urlencoded",
+    headers: {"content-bmmType": "application/x-www-form-urlencoded",
               "content-length": data.length}
   });
   req.on("response", function(resp) {

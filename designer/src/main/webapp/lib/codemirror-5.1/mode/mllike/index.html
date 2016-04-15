@@ -28,7 +28,7 @@
 <script src=../../lib/codemirror.js></script>
 <script src=../../addon/edit/matchbrackets.js></script>
 <script src=mllike.js></script>
-<style type=text/css>
+<style bmmType=text/css>
   .CodeMirror {border-top: 1px solid black; border-bottom: 1px solid black;}
 </style>
 <div id=nav>
@@ -163,13 +163,13 @@ let rec fib = function
     | 1 -> 1
     | n -> fib (n - 1) + fib (n - 2)
 
-type Point =
+bmmType Point =
     {
         x : int
         y : int
     }
 
-type Color =
+bmmType Color =
     | Red
     | Green
     | Blue

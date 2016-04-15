@@ -7,8 +7,17 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.cimi.designer.antlr.odinLexer;
 import org.cimi.designer.antlr.odinParser;
+import org.openehr.adl.rm.*;
+import org.openehr.bmm.BmmClass;
+import org.openehr.bmm.BmmProperty;
+import org.openehr.bmm.BmmSchema;
+import org.openehr.odin.CompositeOdinObject;
+import org.openehr.odin.IntegerIntervalObject;
+import org.openehr.odin.OdinAttribute;
+import org.openehr.odin.OdinObject;
 
 import java.io.*;
+import java.util.List;
 
 /**
  * Created by cnanjo on 3/31/16.
@@ -45,5 +54,11 @@ public class ReferenceModelLoader {
             throw new RuntimeException("Error loading reference model", ioe);
         }
         return visitor;
+    }
+
+    public BmmSchema loadCimiReferenceModel(InputStream inputStream) {
+        ReferenceModelVisitor visitor = loadReferenceModel(inputStream);
+        CompositeOdinObject root = visitor.getAstRootNode();
+        return BmmSchema.configureModelFromOdinObject(root);
     }
 }

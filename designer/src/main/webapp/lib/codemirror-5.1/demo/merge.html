@@ -108,7 +108,7 @@ function toggleDifferences() {
 window.onload = function() {
   value = document.documentElement.innerHTML;
   orig1 = "<!doctype html>\n\n" + value.replace(/\.\.\//g, "codemirror/").replace("yellow", "orange");
-  orig2 = value.replace(/\u003cscript/g, "\u003cscript type=text/javascript ")
+  orig2 = value.replace(/\u003cscript/g, "\u003cscript bmmType=text/javascript ")
     .replace("white", "purple;\n      font: comic sans;\n      text-decoration: underline;\n      height: 15em");
   initUI();
 };

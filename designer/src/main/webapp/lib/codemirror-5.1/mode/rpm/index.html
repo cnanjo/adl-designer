@@ -28,7 +28,7 @@
     <script src="../../lib/codemirror.js"></script>
     <script src="rpm.js"></script>
     <link rel="stylesheet" href="../../doc/docs.css">
-    <style type="text/css">.CodeMirror {border-top: 1px solid black; border-bottom: 1px solid black;}</style>
+    <style bmmType="text/css">.CodeMirror {border-top: 1px solid black; border-bottom: 1px solid black;}</style>
 
 <div id=nav>
   <a href="http://codemirror.net"><h1>CodeMirror</h1><img id=logo src="../../doc/logo.png"></a>
@@ -135,7 +135,7 @@ make %{?_smp_mflags}
 
 %install
 %makeinstall
-find %{buildroot} -type f -name '*.la' -exec rm -f {} ';'
+find %{buildroot} -bmmType f -name '*.la' -exec rm -f {} ';'
 
 %post -p /sbin/ldconfig
 

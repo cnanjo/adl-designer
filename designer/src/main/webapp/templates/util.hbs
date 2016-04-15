@@ -5,7 +5,7 @@
         <th>Key</th>
         <th>Value</th>
         <th>
-            <button id="{{panel_id}}_add" type="button" class="btn btn-default pull-right">
+            <button id="{{panel_id}}_add" bmmType="button" class="btn btn-default pull-right">
                 &nbsp;<span class="glyphicon glyphicon-plus"></span>&nbsp;
             </button>
         </th>
@@ -20,7 +20,7 @@
     <td><input name="key" data-row="{{row_id}}" value="{{key}}" class="form-control input"></td>
     <td><input name="value" data-row="{{row_id}}" value="{{value}}" class="form-control input"></td>
     <td>
-        <button id="{{panel_id}}_{{row_id}}_remove" data-row="{{row_id}}" type="button" class="btn btn-default pull-right">
+        <button id="{{panel_id}}_{{row_id}}_remove" data-row="{{row_id}}" bmmType="button" class="btn btn-default pull-right">
             &nbsp;<span class="glyphicon glyphicon-minus"></span>&nbsp;
         </button>
     </td>
@@ -35,14 +35,14 @@
         </td>
         <td class="align-top left-space-small">
             <div class="btn-group-vertical" role="group">
-                <button id="{{panel_id}}_add" type="button" class="btn btn-default data" title="add">
+                <button id="{{panel_id}}_add" bmmType="button" class="btn btn-default data" title="add">
                     &nbsp;<span class="glyphicon glyphicon-plus"></span>&nbsp;
                 </button>
-                <button id="{{panel_id}}_remove" type="button" class="btn btn-default data" title="remove">
+                <button id="{{panel_id}}_remove" bmmType="button" class="btn btn-default data" title="remove">
                     &nbsp;<span class="glyphicon glyphicon-minus"></span>&nbsp;
                 </button>
 
-                <button id="{{panel_id}}_edit" type="button" class="btn btn-default data" title="edit">
+                <button id="{{panel_id}}_edit" bmmType="button" class="btn btn-default data" title="edit">
                     &nbsp;<span class="fa fa-pencil-square-o"></span>&nbsp;
                 </button>
             </div>
@@ -61,7 +61,7 @@
         {{#each items}}
             <li id="{{panel_id}}_item_{{@key}}">
                 <span class="checkbox">
-                    <input id="{{../panel_id}}_check_{{@index}}" class="data" type="checkbox" {{#if checked}}checked="checked"{{/if}}>
+                    <input id="{{../panel_id}}_check_{{@index}}" class="data" bmmType="checkbox" {{#if checked}}checked="checked"{{/if}}>
                     {{label}}
                 </span>
             </li>

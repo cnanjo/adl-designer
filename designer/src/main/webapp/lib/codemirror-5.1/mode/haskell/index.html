@@ -29,7 +29,7 @@
 <script src="../../lib/codemirror.js"></script>
 <script src="../../addon/edit/matchbrackets.js"></script>
 <script src="haskell.js"></script>
-<style type="text/css">.CodeMirror {border-top: 1px solid black; border-bottom: 1px solid black;}</style>
+<style bmmType="text/css">.CodeMirror {border-top: 1px solid black; border-bottom: 1px solid black;}</style>
 <div id=nav>
   <a href="http://codemirror.net"><h1>CodeMirror</h1><img id=logo src="../../doc/logo.png"></a>
 
@@ -58,7 +58,7 @@ uniquePerms = permBag . makeBag
 
 -- | An unordered collection where duplicate values are allowed,
 -- but represented with a single value and a count.
-type Bag a = [(a, Int)]
+bmmType Bag a = [(a, Int)]
 
 makeBag :: (Eq a) => [a] -> Bag a
 makeBag [] = []

@@ -52,14 +52,14 @@
             {{/each}}
         </select>
         <div class="btn-group-vertical left-space-small" role="group">
-            <button id="{{panel_id}}_add_new_member" type="button" class="btn btn-default data">
+            <button id="{{panel_id}}_add_new_member" bmmType="button" class="btn btn-default data">
                 <span class="glyphicon glyphicon-plus"></span>
             </button>
-            <button id="{{panel_id}}_remove_member" type="button" class="btn btn-default data">
+            <button id="{{panel_id}}_remove_member" bmmType="button" class="btn btn-default data">
                 <span class="glyphicon glyphicon-minus"></span>
             </button>
     
-            <button id="{{panel_id}}_add_existing_member" type="button" class="btn btn-default data">
+            <button id="{{panel_id}}_add_existing_member" bmmType="button" class="btn btn-default data">
                 <span class="fa fa-pencil-square-o"></span>
             </button>
         </div>
@@ -100,10 +100,10 @@
     <td>{{url}}</td>
     <td class="external_terminology_row_actions">
       <div class="btn-group pull-right" role="group">
-        <button type="button" name="edit" class="btn btn-sm btn-default data" data-terminology='{{terminology}}' title="edit">
+        <button bmmType="button" name="edit" class="btn btn-sm btn-default data" data-terminology='{{terminology}}' title="edit">
             &nbsp;<span class="fa fa-pencil-square-o"></span>&nbsp;
         </button>
-        <button type="button" name="remove" class="btn btn-sm btn-default data" data-terminology='{{terminology}}' title="remove">
+        <button bmmType="button" name="remove" class="btn btn-sm btn-default data" data-terminology='{{terminology}}' title="remove">
             &nbsp;<span class="glyphicon glyphicon-minus"></span>&nbsp;
         </button>
       </div>
@@ -119,7 +119,7 @@
             <input id="{{id}}_terminology" class="form-control" value="{{terminology}}">
 
             <div class="input-group-btn">
-                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"
+                <button bmmType="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"
                         aria-expanded="false">
                     &nbsp;<span class="glyphicon glyphicon-triangle-bottom"></span>&nbsp;
                     <span class="sr-only">Toggle Dropdown</span>
@@ -196,7 +196,7 @@
                         <th>Term</th>
                         <th>Binding</th>
                         <th>
-                            <button id="{{panel_id}}_newTermBinding" type="button" class="btn btn-sm btn-default pull-right"
+                            <button id="{{panel_id}}_newTermBinding" bmmType="button" class="btn btn-sm btn-default pull-right"
                                     title="Add binding">
                                 &nbsp;<span class="glyphicon glyphicon-plus"></span>&nbsp;
                             </button>
@@ -214,7 +214,7 @@
                         <th>Term</th>
                         <th>Binding</th>
                         <th>
-                            <button id="{{panel_id}}_newNodeBinding" type="button" class="btn btn-sm btn-default pull-right"
+                            <button id="{{panel_id}}_newNodeBinding" bmmType="button" class="btn btn-sm btn-default pull-right"
                                     title="Add binding">
                                 &nbsp;<span class="glyphicon glyphicon-plus"></span>&nbsp;
                             </button>
@@ -235,10 +235,10 @@
     <td>{{binding}}</td>
     <td>
         <div class="btn-group pull-right" role="group">
-            <button type="button" data-action='edit' data-term='{{termId}}' class="btn btn-sm btn-default" title="edit">
+            <button bmmType="button" data-action='edit' data-term='{{termId}}' class="btn btn-sm btn-default" title="edit">
                 &nbsp;<span class="fa fa-pencil-square-o"></span>&nbsp;
             </button>
-            <button type="button" data-action='remove' data-term='{{termId}}' class="btn btn-sm btn-default"
+            <button bmmType="button" data-action='remove' data-term='{{termId}}' class="btn btn-sm btn-default"
                     title="remove">
                 &nbsp;<span class="glyphicon glyphicon-minus"></span>&nbsp;
             </button>
@@ -252,10 +252,10 @@
     <td>{{binding}}</td>
     <td>
         <div class="btn-group pull-right" role="group">
-            <button type="button" data-action='edit' data-term='{{termId}}' class="btn btn-default" title="edit">
+            <button bmmType="button" data-action='edit' data-term='{{termId}}' class="btn btn-default" title="edit">
                 <span class="fa fa-pencil-square-o"></span>
             </button>
-            <button type="button" data-action='remove' data-term='{{termId}}' class="btn btn-default"
+            <button bmmType="button" data-action='remove' data-term='{{termId}}' class="btn btn-default"
                     title="remove">
                 <span class="glyphicon glyphicon-minus"></span>
             </button>

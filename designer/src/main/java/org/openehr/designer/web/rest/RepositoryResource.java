@@ -160,7 +160,7 @@ public class RepositoryResource extends AbstractResource {
         OptBuilder.Opt opt = createOptBuilder(conf).build(templateArchetypes);
 
         HttpHeaders headers = new HttpHeaders();
-        headers.add("Content-Type", "text/xml; charset=utf-8");
+        headers.add("Content-CompositeOdinObject", "text/xml; charset=utf-8");
         headers.add("Content-Disposition", "attachment; filename=\"" + opt.getTemplateId() + ".opt\"");
         headers.add("Content-Length", Integer.toString(opt.getContent().length));
         return new ResponseEntity<>(opt.getContent(), headers, HttpStatus.OK);
@@ -185,7 +185,7 @@ public class RepositoryResource extends AbstractResource {
         OptBuilder.Opt opt = createOptBuilder(conf).build(templateArchetypes);
 
         HttpHeaders headers = new HttpHeaders();
-        headers.add("Content-Type", "text/xml; charset=utf-8");
+        headers.add("Content-CompositeOdinObject", "text/xml; charset=utf-8");
         headers.add("Content-Disposition", "attachment; filename=\"" + opt.getTemplateId() + ".opt\"");
         headers.add("Content-Length", Integer.toString(opt.getContent().length));
         return new ResponseEntity<>(opt.getContent(), headers, HttpStatus.OK);
@@ -203,7 +203,7 @@ public class RepositoryResource extends AbstractResource {
         byte[] adltContent = TemplateSerializer.serialize(archetypes).getBytes(Charsets.UTF_8);
 
         HttpHeaders headers = new HttpHeaders();
-        headers.add("Content-Type", "text/plain; charset=utf-8");
+        headers.add("Content-CompositeOdinObject", "text/plain; charset=utf-8");
         headers.add("Content-Disposition", "attachment; filename=\"" + archetypeName + ".adlt\"");
         headers.add("Content-Length", Integer.toString(adltContent.length));
         return new ResponseEntity<>(adltContent, headers, HttpStatus.OK);

@@ -57,7 +57,7 @@
 <script src="../keymap/sublime.js"></script>
 <script src="../keymap/vim.js"></script>
 
-<style type="text/css">
+<style bmmType="text/css">
   .ok {color: #090;}
   .fail {color: #e00;}
   .error {color: #c90;}
@@ -189,7 +189,7 @@
         output.innerHTML = '';
         document.getElementById("testground").innerHTML = "<form>" +
           "<textarea id=\"code\" name=\"code\"></textarea>" +
-          "<input type=submit value=ok name=submit>" +
+          "<input bmmType=submit value=ok name=submit>" +
           "</form>";
         runTests(displayTest);
       }
@@ -213,34 +213,34 @@
         newOutput.appendChild(newMessage);
         output.appendChild(newOutput);
       }
-      function displayTest(type, name, customMessage) {
+      function displayTest(bmmType, name, customMessage) {
         var message = "???";
-        if (type != "done" && type != "skipped") ++count;
+        if (bmmType != "done" && bmmType != "skipped") ++count;
         progress.style.width = (count * (progress.parentNode.clientWidth - 2) / totalTests) + "px";
         progressRan.nodeValue = count;
-        if (type == "ok") {
+        if (bmmType == "ok") {
           message = "Test '" + name + "' succeeded";
           if (!verbose) customMessage = false;
-        } else if (type == "skipped") {
+        } else if (bmmType == "skipped") {
           message = "Test '" + name + "' skipped";
           ++skipped;
           if (!verbose) customMessage = false;
-        } else if (type == "expected") {
+        } else if (bmmType == "expected") {
           message = "Test '" + name + "' failed as expected";
           if (!verbose) customMessage = false;
-        } else if (type == "error" || type == "fail") {
+        } else if (bmmType == "error" || bmmType == "fail") {
           ++failed;
           message = "Test '" + name + "' failed";
-        } else if (type == "done") {
+        } else if (bmmType == "done") {
           if (failed) {
-            type += " fail";
+            bmmType += " fail";
             message = failed + " failure" + (failed > 1 ? "s" : "");
           } else if (count < totalTests) {
             failed = totalTests - count;
-            type += " fail";
+            bmmType += " fail";
             message = failed + " failure" + (failed > 1 ? "s" : "");
           } else {
-            type += " ok";
+            bmmType += " ok";
             message = "All passed";
             if (skipped) {
               message += " (" + skipped + " skipped)";
@@ -250,9 +250,9 @@
           customMessage = true; // Hack to avoid adding to output
         }
         if (verbose && !customMessage)  customMessage = message;
-        setStatus(message, type);
+        setStatus(message, bmmType);
         if (customMessage && customMessage.length > 0) {
-          addOutput(name, type, customMessage);
+          addOutput(name, bmmType, customMessage);
         }
       }
     </script>

@@ -133,9 +133,9 @@ On *:Dialog:Aka_Search:init:*: { did -c $dname 5 }
 On *:Dialog:Aka_Search:Sclick:2,7,9: {
   if ($did == 2) && ($did($dname,1)) {
     did -r $dname 6
-    var %search $+(*,$v1,*), %type $iif($did($dname,5).state,data,item), %matches = $hfind(NickNames,%search,0,w). [ $+ [ %type ] ]
+    var %search $+(*,$v1,*), %bmmType $iif($did($dname,5).state,data,item), %matches = $hfind(NickNames,%search,0,w). [ $+ [ %bmmType ] ]
     while (%matches) {
-      did -a $dname 6 $hfind(NickNames,%search,%matches,w). [ $+ [ %type ] ]
+      did -a $dname 6 $hfind(NickNames,%search,%matches,w). [ $+ [ %bmmType ] ]
       dec %matches
     }
     did -c $dname 6 1

@@ -59,7 +59,7 @@
       <div id="{{magnitude.panel_id}}"></div>
       <div class="row properties-line">
         <div class="properties-label"><label for="{{panel_id}}_precision" class="control-label">Limit decimal places</label></div>
-        <div class="properties-value"><input id="{{panel_id}}_precision" type="number" class="form-control input-sm data archetype-only" value="{{precision}}"></div>
+        <div class="properties-value"><input id="{{panel_id}}_precision" bmmType="number" class="form-control input-sm data archetype-only" value="{{precision}}"></div>
       </div>
   </div>
 {{/each}}
@@ -68,7 +68,7 @@
 <div class="horizontal-stretch">
   <div class="row properties-line">
     <div class="properties-label"><label>Coded text</label></div>
-    <div class="properties-value"><input id="{{panel_id}}_coded_text" type="checkbox" class="data"></div>
+    <div class="properties-value"><input id="{{panel_id}}_coded_text" bmmType="checkbox" class="data"></div>
   </div>
   <div id="{{defining_code.panel_id}}" class="properties-sub-panel"></div>
 </div>
@@ -96,21 +96,21 @@
                 <select id="{{panel_id}}_values" class="form-control data" size="10">
                 </select>
                 <div class="btn-group-vertical left-space-small" role="group">
-                    <button id="{{panel_id}}_add_new_value" type="button" class="btn btn-default data archetype-only"
+                    <button id="{{panel_id}}_add_new_value" bmmType="button" class="btn btn-default data archetype-only"
                             title="add new value">
                         <span class="glyphicon glyphicon-plus"></span>
                     </button>
-                    <button id="{{panel_id}}_remove_value" type="button" class="btn btn-default data archetype-only"
+                    <button id="{{panel_id}}_remove_value" bmmType="button" class="btn btn-default data archetype-only"
                             title="remove">
                         <span class="glyphicon glyphicon-minus"></span>
                     </button>
 
-                    <button id="{{panel_id}}_add_existing_value" type="button"
+                    <button id="{{panel_id}}_add_existing_value" bmmType="button"
                             class="btn btn-default data archetype-only"
                             title="add existing value">
                         <span class="fa fa-pencil-square-o"></span>
                     </button>
-                    <button id="{{panel_id}}_edit_value" type="button" class="btn btn-default data  archetype-only"
+                    <button id="{{panel_id}}_edit_value" bmmType="button" class="btn btn-default data  archetype-only"
                             title="edit">
                         <span class="glyphicon glyphicon-wrench"></span>
                     </button>
@@ -124,7 +124,7 @@
 <div class="horizontal-stretch">
     <div class="row properties-line">
       <div class="properties-label"><label for="{{id}}_value">Ordinal value</label></div>
-      <div class="properties-value"><input id="{{id}}_value" class="form-control" type="number" value="{{value.value}}"></div>
+      <div class="properties-value"><input id="{{id}}_value" class="form-control" bmmType="number" value="{{value.value}}"></div>
     </div>
     <div class="row properties-line">
       <div class="properties-label"><label for="{{id}}_text">Text</label></div>
@@ -146,15 +146,15 @@
 <div class="horizontal-stretch">
     <div class="row properties-line">
         <div class="properties-label"><label for="{{panel_id}}_issuer">Issuer</label></div>
-        <div class="properties-value"><input id="{{panel_id}}_issuer" type="text" class="form-control input-sm data archetype-only" value="{{issuerPattern}}"/></div>
+        <div class="properties-value"><input id="{{panel_id}}_issuer" bmmType="text" class="form-control input-sm data archetype-only" value="{{issuerPattern}}"/></div>
     </div>
     <div class="row properties-line">
         <div class="properties-label"><label for="{{panel_id}}_type">Type</label></div>
-        <div class="properties-value"><input id="{{panel_id}}_type" type="text" class="form-control input-sm data archetype-only" value="{{typePattern}}"/></div>
+        <div class="properties-value"><input id="{{panel_id}}_type" bmmType="text" class="form-control input-sm data archetype-only" value="{{typePattern}}"/></div>
     </div>
     <div class="row properties-line">
         <div class="properties-label"><label for="{{panel_id}}_assigner">Assigner</label></div>
-        <div class="properties-value"><input id="{{panel_id}}_assigner" type="text" class="form-control input-sm data archetype-only" value="{{assignerPattern}}"/></div>
+        <div class="properties-value"><input id="{{panel_id}}_assigner" bmmType="text" class="form-control input-sm data archetype-only" value="{{assignerPattern}}"/></div>
     </div>
 </div>
 
@@ -179,21 +179,21 @@
     <div class="properties-value" id="{{panel_id}}_kinds_panel">
       <div class="properties-value-item">
           <div class="col-sm-12">
-              <input id="{{panel_id}}_kind_ratio" type="checkbox" class="data archetype-only"> Ratio
+              <input id="{{panel_id}}_kind_ratio" bmmType="checkbox" class="data archetype-only"> Ratio
           </div>
           <div class="col-sm-12">
-              <input id="{{panel_id}}_kind_unitary" type="checkbox" class="data  archetype-only"> Unitary
+              <input id="{{panel_id}}_kind_unitary" bmmType="checkbox" class="data  archetype-only"> Unitary
           </div>
           <div class="col-sm-12">
-              <input id="{{panel_id}}_kind_percent" type="checkbox" class="data  archetype-only"> Percent
+              <input id="{{panel_id}}_kind_percent" bmmType="checkbox" class="data  archetype-only"> Percent
           </div>
       </div>
       <div class="properties-value-item">
           <div class="col-sm-12">
-              <input id="{{panel_id}}_kind_fraction" type="checkbox" class="data  archetype-only"> Fraction
+              <input id="{{panel_id}}_kind_fraction" bmmType="checkbox" class="data  archetype-only"> Fraction
           </div>
           <div class="col-sm-12">
-              <input id="{{panel_id}}_kind_integer_fraction" type="checkbox" class="data  archetype-only"> Integer
+              <input id="{{panel_id}}_kind_integer_fraction" bmmType="checkbox" class="data  archetype-only"> Integer
               Fraction
           </div>
       </div>
@@ -251,14 +251,14 @@
           {{#unless isTemplate}}
             <div class="properties-value-item small">
               <span class="">
-                  <button id="{{panel_id}}_addType" type="button" class="btn btn-sm btn-default data"
+                  <button id="{{panel_id}}_addType" bmmType="button" class="btn btn-sm btn-default data"
                           title="add new value">
                       &nbsp;<span class="glyphicon glyphicon-plus"></span>&nbsp;
                   </button>
               </span>
               <span class="">
-                  <button id="{{panel_id}}_removeType" type="button" class="btn btn-sm btn-default data"
-                          title="removes current type">
+                  <button id="{{panel_id}}_removeType" bmmType="button" class="btn btn-sm btn-default data"
+                          title="removes current bmmType">
                       &nbsp;<span class="glyphicon glyphicon-minus"></span>&nbsp;
                   </button>
               </span>

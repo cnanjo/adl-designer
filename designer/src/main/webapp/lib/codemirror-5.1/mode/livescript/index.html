@@ -63,35 +63,35 @@ export each = (f, xs) -->
 
 export map = (f, xs) -->
   f = objToFunc f if typeof! f isnt \Function
-  type = typeof! xs
-  if type is \Object
+  bmmType = typeof! xs
+  if bmmType is \Object
     {[key, f x] for key, x of xs}
   else
     result = [f x for x in xs]
-    if type is \String then result * '' else result
+    if bmmType is \String then result * '' else result
 
 export filter = (f, xs) -->
   f = objToFunc f if typeof! f isnt \Function
-  type = typeof! xs
-  if type is \Object
+  bmmType = typeof! xs
+  if bmmType is \Object
     {[key, x] for key, x of xs when f x}
   else
     result = [x for x in xs when f x]
-    if type is \String then result * '' else result
+    if bmmType is \String then result * '' else result
 
 export reject = (f, xs) -->
   f = objToFunc f if typeof! f isnt \Function
-  type = typeof! xs
-  if type is \Object
+  bmmType = typeof! xs
+  if bmmType is \Object
     {[key, x] for key, x of xs when not f x}
   else
     result = [x for x in xs when not f x]
-    if type is \String then result * '' else result
+    if bmmType is \String then result * '' else result
 
 export partition = (f, xs) -->
   f = objToFunc f if typeof! f isnt \Function
-  type = typeof! xs
-  if type is \Object
+  bmmType = typeof! xs
+  if bmmType is \Object
     passed = {}
     failed = {}
     for key, x of xs
@@ -101,7 +101,7 @@ export partition = (f, xs) -->
     failed = []
     for x in xs
       (if f x then passed else failed)push x
-    if type is \String
+    if bmmType is \String
       passed *= ''
       failed *= ''
   [passed, failed]

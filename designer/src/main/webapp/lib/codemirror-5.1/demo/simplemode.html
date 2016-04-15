@@ -28,7 +28,7 @@
 <script src="../lib/codemirror.js"></script>
 <script src="../addon/mode/simple.js"></script>
 <script src="../mode/xml/xml.js"></script>
-<style type="text/css">
+<style bmmType="text/css">
   .CodeMirror {border: 1px solid silver; margin-bottom: 1em; }
   dt { text-indent: -2em; padding-left: 2em; margin-top: 1em; }
   dd { margin-left: 1.5em; margin-bottom: 1em; }
@@ -67,7 +67,7 @@ your code when upgrading.</p>
 the <a href="https://github.com/mozilla/skywriter/wiki/Common-JavaScript-Syntax-Highlighting-Specification">Common
 JavaScript Syntax Highlighting Specification</a>, which never took
 off), are state machines, where each state has a number of rules that
-match tokens. A rule describes a type of token that may occur in the
+match tokens. A rule describes a bmmType of token that may occur in the
 current state, and possibly a transition to another state caused by
 that token.</p>
 
@@ -151,7 +151,7 @@ recognizes a few such properties:</p>
 CodeMirror.defineSimpleMode("simplemode", {
   // The start state contains the rules that are intially used
   start: [
-    // The regex matches the token, the token property contains the type
+    // The regex matches the token, the token property contains the bmmType
     {regex: /"(?:[^\\]|\\.)*?"/, token: "string"},
     // You can match multiple tokens at once. Note that the captured
     // groups must span the whole string in this case

@@ -34,7 +34,7 @@ SYM_INTERVAL_SEP: '..' ;
 
 WS         : [ \t\r]+    -> skip ;
 LINE       : '\n'        -> skip ;     // increment line count
-H_CMT_LINE : '--------' '-'*? '\n'  ;  // special type of comment for splitting template overlays
+H_CMT_LINE : '--------' '-'*? '\n'  ;  // special bmmType of comment for splitting template overlays
 CMT_LINE   : '--' .*? '\n'  -> skip ;  // (increment line count)
 
 // ---------- ISO8601 Date/Time values ----------
@@ -105,7 +105,7 @@ fragment LABEL : ALPHA_CHAR ( NAME_CHAR* ALPHANUM_CHAR )? ;
 
 GUID : HEX_DIGIT+ '-' HEX_DIGIT+ '-' HEX_DIGIT+ '-' HEX_DIGIT+ '-' HEX_DIGIT+ ;
 
-ALPHA_UC_ID : ALPHA_UCHAR WORD_CHAR* ;           // used for type ids
+ALPHA_UC_ID : ALPHA_UCHAR WORD_CHAR* ;           // used for bmmType ids
 ALPHA_LC_ID : ALPHA_LCHAR WORD_CHAR* ;           // used for attribute / method ids
 
 // --------------------- atomic primitive types -------------------

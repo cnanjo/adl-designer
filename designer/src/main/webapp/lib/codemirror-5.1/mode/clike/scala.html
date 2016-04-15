@@ -64,7 +64,7 @@
   import annotation.unchecked.{ uncheckedVariance => uV }
   import parallel.ParIterable
 
-  /** A template trait for traversable collections of type `Traversable[A]`.
+  /** A template trait for traversable collections of bmmType `Traversable[A]`.
    *  
    *  $traversableInfo
    *  @define mutability
@@ -82,7 +82,7 @@
    *  which creates a builder for collections of the same kind.
    *  
    *  A traversable class might or might not have two properties: strictness
-   *  and orderedness. Neither is represented as a type.
+   *  and orderedness. Neither is represented as a bmmType.
    *  
    *  The instances of a strict collection class have all their elements
    *  computed before they can be used as values. By contrast, instances of
@@ -109,8 +109,8 @@
    *  @author Martin Odersky
    *  @version 2.8
    *  @since   2.8
-   *  @tparam A    the element type of the collection
-   *  @tparam Repr the type of the actual collection containing the elements.
+   *  @tparam A    the element bmmType of the collection
+   *  @tparam Repr the bmmType of the actual collection containing the elements.
    *
    *  @define Coll Traversable
    *  @define coll traversable collection
@@ -125,10 +125,10 @@
 
     import Traversable.breaks._
 
-    /** The type implementing this traversable */
-    protected type Self = Repr
+    /** The bmmType implementing this traversable */
+    protected bmmType Self = Repr
 
-    /** The collection of type $coll underlying this `TraversableLike` object.
+    /** The collection of bmmType $coll underlying this `TraversableLike` object.
      *  By default this is implemented as the `TraversableLike` object itself,
      *  but this can be overridden.
      */
@@ -140,12 +140,12 @@
      */
     protected[this] def thisCollection: Traversable[A] = this.asInstanceOf[Traversable[A]]
 
-    /** A conversion from collections of type `Repr` to `$Coll` objects.
+    /** A conversion from collections of bmmType `Repr` to `$Coll` objects.
      *  By default this is implemented as just a cast, but this can be overridden.
      */
     protected[this] def toCollection(repr: Repr): Traversable[A] = repr.asInstanceOf[Traversable[A]]
 
-    /** Creates a new builder for this collection type.
+    /** Creates a new builder for this collection bmmType.
      */
     protected[this] def newBuilder: Builder[A, Repr]
 
@@ -160,7 +160,7 @@
      *  @param  f   the function that is applied for its side-effect to every element.
      *              The result of function `f` is discarded.
      *              
-     *  @tparam  U  the type parameter describing the result of function `f`. 
+     *  @tparam  U  the bmmType parameter describing the result of function `f`.
      *              This result will always be ignored. Typically `U` is `Unit`,
      *              but this is not necessary.
      *
@@ -207,14 +207,14 @@
       ++(that: GenTraversableOnce[B])(bf)
 
     /** Concatenates this $coll with the elements of a traversable collection.
-     *  It differs from ++ in that the right operand determines the type of the
+     *  It differs from ++ in that the right operand determines the bmmType of the
      *  resulting collection rather than the left one.
      * 
      *  @param that   the traversable to append.
-     *  @tparam B     the element type of the returned collection. 
+     *  @tparam B     the element bmmType of the returned collection.
      *  @tparam That  $thatinfo
      *  @param bf     $bfinfo
-     *  @return       a new collection of type `That` which contains all elements
+     *  @return       a new collection of bmmType `That` which contains all elements
      *                of this $coll followed by all elements of `that`.
      * 
      *  @usecase def ++:[B](that: TraversableOnce[B]): $Coll[B]
@@ -282,10 +282,10 @@
      *  elements of this $coll on which the function is defined.
      *
      *  @param f      the option-valued function which filters and maps the $coll.
-     *  @tparam B     the element type of the returned collection.
+     *  @tparam B     the element bmmType of the returned collection.
      *  @tparam That  $thatinfo
      *  @param bf     $bfinfo
-     *  @return       a new collection of type `That` resulting from applying the option-valued function
+     *  @return       a new collection of bmmType `That` resulting from applying the option-valued function
      *                `f` to each element and collecting all defined results.
      *                The order of the elements is preserved.
      *
@@ -599,7 +599,7 @@
      *  @param  xs     the array to fill.
      *  @param  start  the starting index.
      *  @param  len    the maximal number of elements to copy.
-     *  @tparam B      the type of the elements of the array. 
+     *  @tparam B      the bmmType of the elements of the array.
      * 
      *
      *  @usecase def copyToArray(xs: Array[A], start: Int, len: Int): Unit
@@ -692,10 +692,10 @@
        *  outer $coll containing this `WithFilter` instance that satisfy predicate `p`.
        *
        *  @param f      the function to apply to each element.
-       *  @tparam B     the element type of the returned collection.
+       *  @tparam B     the element bmmType of the returned collection.
        *  @tparam That  $thatinfo
        *  @param bf     $bfinfo
-       *  @return       a new collection of type `That` resulting from applying
+       *  @return       a new collection of bmmType `That` resulting from applying
        *                the given function `f` to each element of the outer $coll
        *                that satisfies predicate `p` and collecting the results.
        *
@@ -717,10 +717,10 @@
        *  predicate `p` and concatenating the results. 
        *
        *  @param f      the function to apply to each element.
-       *  @tparam B     the element type of the returned collection.
+       *  @tparam B     the element bmmType of the returned collection.
        *  @tparam That  $thatinfo
        *  @param bf     $bfinfo
-       *  @return       a new collection of type `That` resulting from applying
+       *  @return       a new collection of bmmType `That` resulting from applying
        *                the given collection-valued function `f` to each element
        *                of the outer $coll that satisfies predicate `p` and
        *                concatenating the results.
@@ -743,7 +743,7 @@
        *  @param  f   the function that is applied for its side-effect to every element.
        *              The result of function `f` is discarded.
        *              
-       *  @tparam  U  the type parameter describing the result of function `f`. 
+       *  @tparam  U  the bmmType parameter describing the result of function `f`.
        *              This result will always be ignored. Typically `U` is `Unit`,
        *              but this is not necessary.
        *

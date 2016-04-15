@@ -63,13 +63,13 @@ class_definitions = <
         properties = <
             ["archetype_id"] = (P_BMM_SINGLE_PROPERTY) <
                 name = <"archetype_id">
-                type = <"String">
+                bmmType = <"String">
                 is_mandatory = <True>
                 is_im_infrastructure = <True>
             >
             ["rm_version"] = (P_BMM_SINGLE_PROPERTY) <
                 name = <"rm_version">
-                type = <"String">
+                bmmType = <"String">
                 is_mandatory = <True>
                 is_im_infrastructure = <True>
             >
@@ -82,11 +82,11 @@ class_definitions = <
         properties = <
             ["null_flavor"] = (P_BMM_SINGLE_PROPERTY) <
                 name = <"null_flavor">
-                type = <"CODED_TEXT">
+                bmmType = <"CODED_TEXT">
             >
             ["value"] = (P_BMM_SINGLE_PROPERTY) <
                 name = <"value">
-                type = <"DATA_VALUE">
+                bmmType = <"DATA_VALUE">
             >
         >
     >
@@ -105,7 +105,7 @@ class_definitions = <
                 name = <"item">
                 type_def = <
                     container_type = <"List">
-                    type = <"ITEM">
+                    bmmType = <"ITEM">
                 >
                 cardinality = <|>=1|>
                 is_mandatory = <True>
@@ -114,7 +114,7 @@ class_definitions = <
                 name = <"participation">
                 type_def = <
                     container_type = <"List">
-                    type = <"PARTICIPATION">
+                    bmmType = <"PARTICIPATION">
                 >
                 cardinality = <|>=0|>
             >
@@ -126,20 +126,20 @@ class_definitions = <
         properties = <
             ["meaning"] = (P_BMM_SINGLE_PROPERTY) <
                 name = <"meaning">
-                type = <"TEXT">
+                bmmType = <"TEXT">
                 is_mandatory = <True>
             >
             ["details"] = (P_BMM_CONTAINER_PROPERTY) <
                 name = <"details">
                 type_def = <
                     container_type = <"List">
-                    type = <"ITEM">
+                    bmmType = <"ITEM">
                 >
                 cardinality = <|>=0|>
             >
             ["target"] = (P_BMM_SINGLE_PROPERTY) <
                 name = <"target">
-                type = <"LOCATABLE">
+                bmmType = <"LOCATABLE">
                 is_mandatory = <True>
             >
         >
@@ -151,25 +151,25 @@ class_definitions = <
         properties = <
             ["archetype_node_id"] = (P_BMM_SINGLE_PROPERTY) <
                 name = <"archetype_node_id">
-                type = <"String">
+                bmmType = <"String">
                 is_mandatory = <True>
                 is_im_infrastructure = <True>
             >
             ["name"] = (P_BMM_SINGLE_PROPERTY) <
                 name = <"name">
-                type = <"String">
+                bmmType = <"String">
                 is_mandatory = <True>
             >
             ["archetype_details"] = (P_BMM_SINGLE_PROPERTY) <
                 name = <"archetype_details">
-                type = <"ARCHETYPED">
+                bmmType = <"ARCHETYPED">
                 is_im_infrastructure = <True>
             >
             ["link"] = (P_BMM_CONTAINER_PROPERTY) <
                 name = <"link">
                 type_def = <
                     container_type = <"List">
-                    type = <"LINK">
+                    bmmType = <"LINK">
                 >
                 cardinality = <|>=0|>
             >
@@ -180,22 +180,22 @@ class_definitions = <
         name = <"PARTICIPATION">
         ancestors = <"LOCATABLE", ...>
         properties = <
-            ["type"] = (P_BMM_SINGLE_PROPERTY) <
-                name = <"type">
-                type = <"CODED_TEXT">
+            ["bmmType"] = (P_BMM_SINGLE_PROPERTY) <
+                name = <"bmmType">
+                bmmType = <"CODED_TEXT">
                 is_mandatory = <True>
             >
             ["details"] = (P_BMM_CONTAINER_PROPERTY) <
                 name = <"details">
                 type_def = <
                     container_type = <"List">
-                    type = <"ITEM">
+                    bmmType = <"ITEM">
                 >
                 cardinality = <|>=0|>
             >
             ["party"] = (P_BMM_SINGLE_PROPERTY) <
                 name = <"party">
-                type = <"PARTY">
+                bmmType = <"PARTY">
                 is_mandatory = <True>
             >
         >
@@ -210,11 +210,11 @@ class_definitions = <
         properties = <
             ["accuracy"] = (P_BMM_SINGLE_PROPERTY) <
                 name = <"accuracy">
-                type = <"Real">
+                bmmType = <"Real">
             >
             ["accuracy_is_percent"] = (P_BMM_SINGLE_PROPERTY) <
                 name = <"accuracy_is_percent">
-                type = <"Boolean">
+                bmmType = <"Boolean">
             >
         >
     >
@@ -225,25 +225,25 @@ class_definitions = <
         properties = <
             ["uri"] = (P_BMM_SINGLE_PROPERTY) <
                 name = <"uri">
-                type = <"URI">
+                bmmType = <"URI">
             >
             ["terminology_id"] = (P_BMM_SINGLE_PROPERTY) <
                 name = <"terminology_id">
-                type = <"String">
+                bmmType = <"String">
                 is_mandatory = <True>
             >
             ["code"] = (P_BMM_SINGLE_PROPERTY) <
                 name = <"code">
-                type = <"String">
+                bmmType = <"String">
                 is_mandatory = <True>
             >
             ["terminology_version"] = (P_BMM_SINGLE_PROPERTY) <
                 name = <"terminology_version">
-                type = <"String">
+                bmmType = <"String">
             >
             ["term"] = (P_BMM_SINGLE_PROPERTY) <
                 name = <"term">
-                type = <"String">
+                bmmType = <"String">
             >
         >
     >
@@ -254,7 +254,7 @@ class_definitions = <
         properties = <
             ["value"] = (P_BMM_SINGLE_PROPERTY) <
                 name = <"value">
-                type = <"Integer">
+                bmmType = <"Integer">
                 is_mandatory = <True>
             >
         >
@@ -276,7 +276,7 @@ class_definitions = <
         properties = <
             ["value"] = (P_BMM_SINGLE_PROPERTY) <
                 name = <"value">
-                type = <"String">
+                bmmType = <"String">
                 is_mandatory = <True>
             >
         >
@@ -288,7 +288,7 @@ class_definitions = <
         properties = <
             ["duration_text"] = (P_BMM_SINGLE_PROPERTY) <
                 name = <"duration_text">
-                type = <"String">
+                bmmType = <"String">
             >
         >
     >
@@ -310,17 +310,17 @@ class_definitions = <
         properties = <
             ["id"] = (P_BMM_SINGLE_PROPERTY) <
                 name = <"id">
-                type = <"String">
+                bmmType = <"String">
                 is_mandatory = <True>
             >
-            ["type"] = (P_BMM_SINGLE_PROPERTY) <
-                name = <"type">
-                type = <"CODED_TEXT">
+            ["bmmType"] = (P_BMM_SINGLE_PROPERTY) <
+                name = <"bmmType">
+                bmmType = <"CODED_TEXT">
                 is_mandatory = <True>
             >
             ["issuer"] = (P_BMM_SINGLE_PROPERTY) <
                 name = <"issuer">
-                type = <"String">
+                bmmType = <"String">
                 is_mandatory = <True>
             >
         >
@@ -337,31 +337,31 @@ class_definitions = <
         properties = <
             ["upper_unbounded"] = (P_BMM_SINGLE_PROPERTY) <
                 name = <"upper_unbounded">
-                type = <"Boolean">
+                bmmType = <"Boolean">
                 is_mandatory = <True>
             >
             ["lower_unbounded"] = (P_BMM_SINGLE_PROPERTY) <
                 name = <"lower_unbounded">
-                type = <"Boolean">
+                bmmType = <"Boolean">
                 is_mandatory = <True>
             >
             ["upper_included"] = (P_BMM_SINGLE_PROPERTY) <
                 name = <"upper_included">
-                type = <"Boolean">
+                bmmType = <"Boolean">
                 is_mandatory = <True>
             >
             ["lower_included"] = (P_BMM_SINGLE_PROPERTY) <
                 name = <"lower_included">
-                type = <"Boolean">
+                bmmType = <"Boolean">
                 is_mandatory = <True>
             >
             ["lower"] = (P_BMM_SINGLE_PROPERTY_OPEN) <
                 name = <"lower">
-                type = <"T">
+                bmmType = <"T">
             >
             ["upper"] = (P_BMM_SINGLE_PROPERTY_OPEN) <
                 name = <"upper">
-                type = <"T">
+                bmmType = <"T">
             >
         >
     >
@@ -372,24 +372,24 @@ class_definitions = <
         properties = <
             ["alternate_text"] = (P_BMM_SINGLE_PROPERTY) <
                 name = <"alternate_text">
-                type = <"Byte">
+                bmmType = <"Byte">
             >
             ["data"] = (P_BMM_CONTAINER_PROPERTY) <
                 name = <"data">
                 type_def = <
                     container_type = <"Array">
-                    type = <"Byte">
+                    bmmType = <"Byte">
                 >
                 cardinality = <|>=0|>
             >
             ["media_type"] = (P_BMM_SINGLE_PROPERTY) <
                 name = <"media_type">
-                type = <"CODED_TEXT">
+                bmmType = <"CODED_TEXT">
                 is_mandatory = <True>
             >
             ["uri"] = (P_BMM_SINGLE_PROPERTY) <
                 name = <"uri">
-                type = <"URI_VALUE">
+                bmmType = <"URI_VALUE">
             >
         >
     >
@@ -406,12 +406,12 @@ class_definitions = <
         properties = <
             ["symbol"] = (P_BMM_SINGLE_PROPERTY) <
                 name = <"symbol">
-                type = <"CODED_TEXT">
+                bmmType = <"CODED_TEXT">
                 is_mandatory = <True>
             >
             ["value"] = (P_BMM_SINGLE_PROPERTY) <
                 name = <"value">
-                type = <"Real">
+                bmmType = <"Real">
                 is_mandatory = <True>
             >
         >
@@ -423,12 +423,12 @@ class_definitions = <
         properties = <
             ["formalism"] = (P_BMM_SINGLE_PROPERTY) <
                 name = <"formalism">
-                type = <"CODED_TEXT">
+                bmmType = <"CODED_TEXT">
                 is_mandatory = <True>
             >
             ["value"] = (P_BMM_SINGLE_PROPERTY) <
                 name = <"value">
-                type = <"String">
+                bmmType = <"String">
                 is_mandatory = <True>
             >
         >
@@ -440,7 +440,7 @@ class_definitions = <
         properties = <
             ["language"] = (P_BMM_SINGLE_PROPERTY) <
                 name = <"language">
-                type = <"CODED_TEXT">
+                bmmType = <"CODED_TEXT">
             >
         >
     >
@@ -451,21 +451,21 @@ class_definitions = <
         properties = <
             ["numerator"] = (P_BMM_SINGLE_PROPERTY) <
                 name = <"numerator">
-                type = <"Real">
+                bmmType = <"Real">
                 is_mandatory = <True>
             >
             ["denominator"] = (P_BMM_SINGLE_PROPERTY) <
                 name = <"denominator">
-                type = <"Real">
+                bmmType = <"Real">
                 is_mandatory = <True>
             >
             ["precision"] = (P_BMM_SINGLE_PROPERTY) <
                 name = <"precision">
-                type = <"Integer">
+                bmmType = <"Integer">
             >
-            ["type"] = (P_BMM_SINGLE_PROPERTY) <
-                name = <"type">
-                type = <"CODED_TEXT">
+            ["bmmType"] = (P_BMM_SINGLE_PROPERTY) <
+                name = <"bmmType">
+                bmmType = <"CODED_TEXT">
                 is_mandatory = <True>
             >
         >
@@ -478,7 +478,7 @@ class_definitions = <
         properties = <
             ["value_status"] = (P_BMM_SINGLE_PROPERTY) <
                 name = <"value_status">
-                type = <"String">
+                bmmType = <"String">
             >
         >
     >
@@ -489,17 +489,17 @@ class_definitions = <
         properties = <
             ["value"] = (P_BMM_SINGLE_PROPERTY) <
                 name = <"value">
-                type = <"Real">
+                bmmType = <"Real">
                 is_mandatory = <True>
             >
             ["units"] = (P_BMM_SINGLE_PROPERTY) <
                 name = <"units">
-                type = <"CODED_TEXT">
+                bmmType = <"CODED_TEXT">
                 is_mandatory = <True>
             >
             ["precision"] = (P_BMM_SINGLE_PROPERTY) <
                 name = <"precision">
-                type = <"Integer">
+                bmmType = <"Integer">
             >
         >
     >
@@ -509,16 +509,16 @@ class_definitions = <
         properties = <
             ["match"] = (P_BMM_SINGLE_PROPERTY) <
                 name = <"match">
-                type = <"Character">
+                bmmType = <"Character">
                 is_mandatory = <True>
             >
             ["purpose"] = (P_BMM_SINGLE_PROPERTY) <
                 name = <"purpose">
-                type = <"CODED_TEXT">
+                bmmType = <"CODED_TEXT">
             >
             ["target"] = (P_BMM_SINGLE_PROPERTY) <
                 name = <"target">
-                type = <"CODED_TEXT">
+                bmmType = <"CODED_TEXT">
                 is_mandatory = <True>
             >
         >
@@ -531,14 +531,14 @@ class_definitions = <
         properties = <
             ["value"] = (P_BMM_SINGLE_PROPERTY) <
                 name = <"value">
-                type = <"String">
+                bmmType = <"String">
                 is_mandatory = <True>
             >
             ["mapping"] = (P_BMM_CONTAINER_PROPERTY) <
                 name = <"mapping">
                 type_def = <
                     container_type = <"List">
-                    type = <"TERM_MAPPING">
+                    bmmType = <"TERM_MAPPING">
                 >
                 cardinality = <|>=0|>
             >
@@ -556,7 +556,7 @@ class_definitions = <
         properties = <
             ["value"] = (P_BMM_SINGLE_PROPERTY) <
                 name = <"value">
-                type = <"URI">
+                bmmType = <"URI">
                 is_mandatory = <True>
             >
         >
@@ -568,7 +568,7 @@ class_definitions = <
         properties = <
             ["value"] = (P_BMM_SINGLE_PROPERTY) <
                 name = <"value">
-                type = <"Boolean">
+                bmmType = <"Boolean">
                 is_mandatory = <True>
             >
         >
@@ -580,16 +580,16 @@ class_definitions = <
         name = <"ACTOR">
         ancestors = <"PARTY", ...>
         properties = <
-            ["type"] = (P_BMM_SINGLE_PROPERTY) <
-                name = <"type">
-                type = <"CODED_TEXT">
+            ["bmmType"] = (P_BMM_SINGLE_PROPERTY) <
+                name = <"bmmType">
+                bmmType = <"CODED_TEXT">
                 is_mandatory = <True>
             >
             ["role"] = (P_BMM_CONTAINER_PROPERTY) <
                 name = <"role">
                 type_def = <
                     container_type = <"List">
-                    type = <"ROLE">
+                    bmmType = <"ROLE">
                 >
                 cardinality = <|>=0|>
             >
@@ -605,7 +605,7 @@ class_definitions = <
                 name = <"details">
                 type_def = <
                     container_type = <"List">
-                    type = <"ITEM">
+                    bmmType = <"ITEM">
                 >
                 cardinality = <|>=0|>
             >
@@ -613,7 +613,7 @@ class_definitions = <
                 name = <"relationship">
                 type_def = <
                     container_type = <"List">
-                    type = <"PARTY_RELATIONSHIP">
+                    bmmType = <"PARTY_RELATIONSHIP">
                 >
                 cardinality = <|>=0|>
             >
@@ -624,22 +624,22 @@ class_definitions = <
         name = <"PARTY_RELATIONSHIP">
         ancestors = <"LOCATABLE", ...>
         properties = <
-            ["type"] = (P_BMM_SINGLE_PROPERTY) <
-                name = <"type">
-                type = <"CODED_TEXT">
+            ["bmmType"] = (P_BMM_SINGLE_PROPERTY) <
+                name = <"bmmType">
+                bmmType = <"CODED_TEXT">
                 is_mandatory = <True>
             >
             ["details"] = (P_BMM_CONTAINER_PROPERTY) <
                 name = <"details">
                 type_def = <
                     container_type = <"List">
-                    type = <"ITEM">
+                    bmmType = <"ITEM">
                 >
                 cardinality = <|>=0|>
             >
             ["target"] = (P_BMM_SINGLE_PROPERTY) <
                 name = <"target">
-                type = <"PARTY">
+                bmmType = <"PARTY">
                 is_mandatory = <True>
             >
         >
@@ -649,9 +649,9 @@ class_definitions = <
         name = <"ROLE">
         ancestors = <"PARTY", ...>
         properties = <
-            ["type"] = (P_BMM_SINGLE_PROPERTY) <
-                name = <"type">
-                type = <"CODED_TEXT">
+            ["bmmType"] = (P_BMM_SINGLE_PROPERTY) <
+                name = <"bmmType">
+                bmmType = <"CODED_TEXT">
                 is_mandatory = <True>
             >
         >
